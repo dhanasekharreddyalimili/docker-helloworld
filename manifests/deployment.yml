@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aks-dab5"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aks-dab5"
+  template:
+    metadata:
+      labels:
+        app: "aks-dab5"
+    spec:
+      containers:
+        - name: "aks-dab5"
+          image: "myazcr2022.azurecr.io/aks"
+          ports:
+          - containerPort: 80
