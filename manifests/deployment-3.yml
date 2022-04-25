@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myaksapps-51dd"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myaksapps-51dd"
+  template:
+    metadata:
+      labels:
+        app: "myaksapps-51dd"
+    spec:
+      containers:
+        - name: "myaksapps-51dd"
+          image: "myacrrr.azurecr.io/myaksapps"
+          ports:
+          - containerPort: 80
