@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myask-ae56"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myask-ae56"
+  template:
+    metadata:
+      labels:
+        app: "myask-ae56"
+    spec:
+      containers:
+        - name: "myask-ae56"
+          image: "myacr2025.azurecr.io/myask"
+          ports:
+          - containerPort: 80
